@@ -1,0 +1,54 @@
+{% if content %}
+	{% if content.image.layout_builder_add_block %}
+		{{ content.image }}
+	{% endif %}
+	{% if content.image|layout_bg_img %}
+		{% set attributes = attributes.merge(content.image|layout_bg_img) %}
+	{% endif %}
+	<div {{ attributes.addClass('vixon-section-title')}}>
+		<div class="container">
+			<div class="vixon-heading">
+				{% if content.intro %}
+					<span {{ region_attributes.intro.addClass('stroked-text')}}>{{ content.intro }}</span>
+				{% endif %}
+
+				<div class="title">
+					{% if content.title %}
+						<h2 {{ region_attributes.title.addClass('head-title') }}>
+							{{ content.title }}
+						</h2>
+					{% endif %}
+
+					{% if content.description %}
+						<p {{ region_attributes.description.addClass('title-description') }}>
+							{{ content.description }}
+						</p>
+					{% endif %}
+				</div>
+			</div>
+			{% if content.container %}
+				<div class="row">
+					<div class="col-12">
+						{{ content.container }}
+					</div>
+				</div>
+			{% endif %}
+
+			<div class="row">
+				<div class="col-lg-12">
+					{% if content.call_to_action_text %}
+                        <h5 {{ region_attributes.call_to_action_text.addClass('question') }}>
+						{{ content.call_to_action_text }}
+					</h5>
+                    {% endif %}
+					
+                    {% if content.call_to_action %}
+                        {{ content.call_to_action }}
+                    {% endif %}
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+{% endif %}
