@@ -1,0 +1,10 @@
+{
+    "name": "justinonomo/vixcon",
+    "description": "Provide event website layouts",
+    "type": "drupal-custom-module",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "require": {
+        "stephane888/formatage_models": "dev-3x | ^3.1"
+    }
+}

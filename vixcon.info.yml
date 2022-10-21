@@ -1,0 +1,5 @@
+name: vixcon
+type: module
+description: Provide some event website layouts
+package: Custom
+core_version_requirement: ^9 || ^10
