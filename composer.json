@@ -2,6 +2,12 @@
     "name": "justinonomo/vixcon",
     "description": "Provide event website layouts",
     "type": "drupal-custom-module",
+    "authors": [
+        {
+            "name": "justin",
+            "email": "justinonomo@gmail.com"
+        }
+    ],
     "license": "MIT",
     "minimum-stability": "dev",
     "require": {
