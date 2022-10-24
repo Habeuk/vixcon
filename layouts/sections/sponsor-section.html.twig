@@ -1,0 +1,17 @@
+{% if content %}
+	<div {{ attributes.addClass('sponsor-bloc')}}>
+		{% if content.label %}
+			<h5 {{ region_attributes.label.addClass('sb-title h6') }}>
+				{{ content.label }}
+			</h5>
+		{% endif %}
+
+		{% if content.content %}
+			<div {{ region_attributes.label.addClass('sponsor-content') }}>
+				{% for item in content.content|array_elements(region_attributes.content.addClass('sponsor-item')) %}
+					{{ item }}
+				{% endfor %}
+			</div>
+		{% endif %}
+	</div>
+{% endif %}

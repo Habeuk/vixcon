@@ -76,7 +76,6 @@ class VixconSectionTitle extends FormatageModelsSection {
     function defaultConfiguration() {
         return [
             'load_libray' => true,
-            'region_tag_hero_variant_title' => 'h3',
             'derivate' => [
                 'value' => '',
                 'options' => [
