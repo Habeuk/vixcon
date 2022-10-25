@@ -1,0 +1,14 @@
+{% if content %}
+	<div {{ attributes.addClass('question-item')}}>
+		{% if content.question %}
+            <h5 {{ region_attributes.question.addClass('question-item__title') }}>
+            {{ content.question }}
+            </h5>
+        {% endif %}
+		{% if content.answer %}
+            <div {{ region_attributes.answer.addClass('question-item__desc') }}>
+            {{ content.answer }}
+		</div>
+        {% endif %}
+	</div>
+{% endif %}

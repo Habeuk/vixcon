@@ -1,0 +1,49 @@
+{% if content %}
+	<div {{ attributes.addClass('vixon-faq-section')}}>
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-8">
+					<div class="vf-heading">
+						{% if content.intro %}
+							<h2 {{ region_attributes.intro.addClass('vf-big-title') }}>
+								{{ content.intro }}
+							</h2>
+						{% endif %}
+
+						{% if content.title %}
+							<h3 {{ region_attributes.title.addClass('vf-title h2') }}>
+								{{ content.title }}
+							</h3>
+						{% endif %}
+
+						{% if content.description %}
+							<div {{ region_attributes.description.addClass('vf-description') }}>
+								{{ content.description }}
+							</div>
+						{% endif %}
+
+					</div>
+					{% if content.container %}
+						<div {{ region_attributes.container.addClass('list-question') }}>
+							{% for item in content.container|array_elements() %}
+								{{ item }}
+							{% endfor %}
+
+						</div>
+					{% endif %}
+
+					<div class="question-block">
+						{% if content.call_to_action_text %}
+							<h5 {{ region_attributes.call_to_action_text.addClass('question h4') }}>
+								{{ content.call_to_action_text }}
+							</h5>
+						{% endif %}
+						{% if content.call_to_action %}
+							{{ content.call_to_action }}
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endif %}

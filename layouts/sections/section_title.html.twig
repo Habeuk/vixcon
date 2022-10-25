@@ -37,14 +37,14 @@
 			<div class="row">
 				<div class="col-lg-12">
 					{% if content.call_to_action_text %}
-                        <h5 {{ region_attributes.call_to_action_text.addClass('question') }}>
-						{{ content.call_to_action_text }}
-					</h5>
-                    {% endif %}
-					
-                    {% if content.call_to_action %}
-                        {{ content.call_to_action }}
-                    {% endif %}
+						<h5 {{ region_attributes.call_to_action_text.addClass('question') }}>
+							{{ content.call_to_action_text }}
+						</h5>
+					{% endif %}
+
+					{% if content.call_to_action %}
+						{{ content.call_to_action }}
+					{% endif %}
 				</div>
 			</div>
 
