@@ -7,34 +7,37 @@ use Drupal\formatage_models\FormatageModelsThemes;
 use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
 
 /**
- * Count the days section of vixcon template
+ * venue location section of vixcon template
  *
  * @Layout(
- *   id = "vixcon_count_the_days_section",
- *   label = @Translation(" Vixcon : Count the days "),
+ *   id = "vixcon_venue_location_section",
+ *   label = @Translation(" Vixcon : Venue location "),
  *   category = @Translation("vixcon"),
  *   path = "layouts/sections",
- *   template = "count-the-days",
- *   library = "vixcon/count-the-days",
+ *   template = "venue-location",
+ *   library = "vixcon/venue-location",
  *   default_region = "title",
  *   regions = {
  *     "title" = {
  *       "label" = @Translation("title"),
  *     },
- *     "bold_title" = {
- *       "label" = @Translation("bold title"),
+ *     "date" = {
+ *       "label" = @Translation("date"),
  *     },
- *     "description" = {
+ *     "address" = {
  *       "label" = @Translation("description"),
  *     },
- *     "counter" = {
- *       "label" = @Translation("counter"),
+ *     "link" = {
+ *       "label" = @Translation("link"),
+ *     },
+ *     "image" = {
+ *       "label" = @Translation("image"),
  *     },
  *   }
  * )
  */
 
-class VixconCountTheDaysSection extends FormatageModelsSection {
+class VixconVenueLocationSection extends FormatageModelsSection {
 
     /**
      *
@@ -44,7 +47,7 @@ class VixconCountTheDaysSection extends FormatageModelsSection {
     public function __construct(array $configuration, $plugin_id, $plugin_definition, StylesGroupManager $styles_group_manager) {
         // TODO Auto-generated method stub
         parent::__construct($configuration, $plugin_id, $plugin_definition, $styles_group_manager);
-        $this->pluginDefinition->set('icon', drupal_get_path('module', 'vixcon') . "/icones/sections/count-the-days.png");
+        $this->pluginDefinition->set('icon', drupal_get_path('module', 'vixcon') . "/icones/sections/venue-location.png");
     }
     
     /**
@@ -67,12 +70,6 @@ class VixconCountTheDaysSection extends FormatageModelsSection {
     function defaultConfiguration() {
         return [
             'load_libray' => true,
-            'derivate' => [
-                'value' => '',
-                'options' => [
-                    'vixon-counter-section--simple' => 'simple',
-                ]
-            ],
             'infos' => [
                 'builder-form' => true,
                 'info' => [
@@ -80,28 +77,38 @@ class VixconCountTheDaysSection extends FormatageModelsSection {
                     'loader' => 'static'
                 ],
                 'fields' => [
-                    'bold_title' => [
-                        'text' => [
-                            'label' => 'Titre gras',
-                            'value' => 'Count the day'
-                        ]
-                    ],
                     'title' => [
                         'text' => [
                             'label' => 'Titre',
-                            'value' => 'until conference start'
+                            'value' => 'venue location'
                         ]
                     ],
-                    'description' => [
+                    'date' => [
+                        'text' => [
+                            'label' => 'Date',
+                            'value' => '18 - 21 December, 2019'
+                        ]
+                    ],
+                    'address' => [
                         'text' => [
                             'label' => 'Description',
-                            'value' => 'Accusantium provident suspicit dicta magni dolor deserunt nam abcaecati non veraris optio'
+                            'value' => '85 Golden Street, Darlinghurst <br>ERP 2019, United States '
                         ]
                     ],
-                    'counter' => [
+                    'link' => [
+                        'url' => [
+                            'label' => 'Link',
+                            'value' => [
+                                'text' => 'View Map location',
+                                'link' => '#',
+                                'class' => 'link-location'
+                            ]
+                        ]
+                    ],
+                    'image' => [
                         'text_html' => [
-                            'label' => 'Arrière Plan',
-                            'value' => 'The counter is down'
+                            'label' => 'Image',
+                            'value' => '<img src="https://demo.themefisher.com/vixcon/images/bg/cta-bg.jpg" alt="">'
                         ]
                     ],
                 ]

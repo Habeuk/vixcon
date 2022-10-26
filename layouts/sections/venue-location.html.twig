@@ -1,0 +1,32 @@
+{% if content %}
+	<div {{ attributes.addClass('vixon-location-section')}}>
+		<div class="container">
+			<div class="img-full">
+				{% if content.image %}
+					{{ content.image }}
+				{% endif %}
+
+				<div class="contact-info">
+					{% if content.title %}
+						<h5 {{ region_attributes.title.addClass('contact-location') }}>{{ content.title }}</h5>
+					{% endif %}
+
+					{% if content.date %}
+						<h6 {{ region_attributes.date.addClass('contact-date') }}>
+							{{ content.date }}
+						</h6>
+					{% endif %}
+					{% if content.address %}
+                        <div {{ region_attributes.address.addClass('contact-lead') }}>
+                        {{ content.address }}
+					</div>
+                    {% endif %}
+                    
+					{% if content.link %}
+                        {{ content.link }}
+                    {% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+{% endif %}
