@@ -1,0 +1,35 @@
+{% if content %}
+	<div {{ attributes.addClass('vixon-counter-section moove-up')}}>
+		<div class="container">
+			<div class="counter-inner">
+				<div class="row align-items-center">
+					<div class="col-lg-6">
+						<div class="counter-stat">
+							<h2 class="cs-light h3">
+								{% if content.bold_title %}
+                                    <span {{ region_attributes.bold_title.addClass('cs-bold') }}>{{ content.bold_title }}</span>
+                                {% endif %}
+                                {% if content.title %}
+                                    <br>
+                                    {{ content.title }}
+                                {% endif %}
+								</h2>
+                            {% if content.description %}
+							<div {{ region_attributes.description.addClass('cs-desc') }}>
+								{{ content.description }}
+							</div>
+						{% endif %}
+						</div>
+					</div>
+					<div class="small-timer">
+						{% if content.counter %}
+                            <div {{ region_attributes.counter.addClass('syotimer__body') }}>
+							{{ content.counter }}
+						</div>
+                        {% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endif %}
