@@ -1,0 +1,25 @@
+{% if content %}
+	<div {{ attributes.addClass('vixon-about-section')}}>
+		<div class="container">
+			{% if content.image %}
+				<div {{ region_attributes.image.addClass('img-full') }}>
+					{{ content.image }}
+				</div>
+			{% endif %}
+			<div class="row">
+				<div class="col-lg-6">
+					{% if content.title %}
+						{{ content.title }}
+					{% endif %}
+
+				</div>
+				<div class="col-lg-6">
+					{% if content.description %}
+						<div {{ region_attributes.image.addClass('vas-desc') }}>
+							{{ content.description }}
+						</div>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	{% endif %}

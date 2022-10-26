@@ -7,28 +7,22 @@ use Drupal\formatage_models\FormatageModelsThemes;
 use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
 
 /**
- * venue location section of vixcon template
+ * about section of vixcon template
  *
  * @Layout(
- *   id = "vixcon_venue_location_section",
- *   label = @Translation(" Vixcon : Venue location "),
+ *   id = "vixcon_about_section",
+ *   label = @Translation(" Vixcon : Avout "),
  *   category = @Translation("vixcon"),
  *   path = "layouts/sections",
- *   template = "venue-location",
- *   library = "vixcon/venue-location",
+ *   template = "about",
+ *   library = "vixcon/about",
  *   default_region = "title",
  *   regions = {
  *     "title" = {
  *       "label" = @Translation("title"),
  *     },
- *     "date" = {
- *       "label" = @Translation("date"),
- *     },
- *     "address" = {
- *       "label" = @Translation("address"),
- *     },
- *     "link" = {
- *       "label" = @Translation("link"),
+ *     "description" = {
+ *       "label" = @Translation("description"),
  *     },
  *     "image" = {
  *       "label" = @Translation("image"),
@@ -37,7 +31,7 @@ use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
  * )
  */
 
-class VixconVenueLocationSection extends FormatageModelsSection {
+class VixconAboutSection extends FormatageModelsSection {
 
     /**
      *
@@ -47,7 +41,7 @@ class VixconVenueLocationSection extends FormatageModelsSection {
     public function __construct(array $configuration, $plugin_id, $plugin_definition, StylesGroupManager $styles_group_manager) {
         // TODO Auto-generated method stub
         parent::__construct($configuration, $plugin_id, $plugin_definition, $styles_group_manager);
-        $this->pluginDefinition->set('icon', drupal_get_path('module', 'vixcon') . "/icones/sections/venue-location.png");
+        $this->pluginDefinition->set('icon', drupal_get_path('module', 'vixcon') . "/icones/sections/about.png");
     }
     
     /**
@@ -78,31 +72,24 @@ class VixconVenueLocationSection extends FormatageModelsSection {
                 ],
                 'fields' => [
                     'title' => [
-                        'text' => [
+                        'text_html' => [
                             'label' => 'Titre',
-                            'value' => 'venue location'
+                            'value' => '<h2 class="vas-title">
+                            Inovation
+                            <br>
+                            <span class="color-theme">Inspiration</span>
+                            Connect People
+                        </h2>n'
                         ]
                     ],
-                    'date' => [
-                        'text' => [
-                            'label' => 'Date',
-                            'value' => '18 - 21 December, 2019'
-                        ]
-                    ],
-                    'address' => [
-                        'text' => [
+                    'description' => [
+                        'text_html' => [
                             'label' => 'Description',
-                            'value' => '85 Golden Street, Darlinghurst <br>ERP 2019, United States '
-                        ]
-                    ],
-                    'link' => [
-                        'url' => [
-                            'label' => 'Link',
-                            'value' => [
-                                'text' => 'View Map location',
-                                'link' => '#',
-                                'class' => 'link-location'
-                            ]
+                            'value' => 'The Event Company is an event design and production company that specializes in
+                            corporate and social events as well as
+                            non-profit fundraisers. We consider ourselves experts when it comes to event fundraising and
+                            public/media relations and
+                            offer consultation services to our clients to help make their event a sensational success.'
                         ]
                     ],
                     'image' => [
