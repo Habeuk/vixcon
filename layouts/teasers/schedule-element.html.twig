@@ -1,0 +1,29 @@
+{% if content %}
+	<li {{ attributes.addClass('d-md-flex time-item align-items-center justify-content-between bg-light')}}>
+		{% if content.hour %}
+            <h4 {{ region_attributes.hour.addClass('time color-primary-theme') }}>
+            {{ content.hour }}
+            </h4>
+        {% endif %}
+		<div class="content">
+			{% if content.title %}
+                <h4 {{ region_attributes.title.addClass('time-title') }}>
+                {{ content.title }}
+                </h4>
+            {% endif %}
+            
+			{% if content.room %}
+            <span {{ region_attributes.room.addClass('font-weight-bold') }}>{{ content.room }}</span>
+            {% endif %}
+			{% if content.places %}
+                <p>{{ content.places }}</p>
+            {% endif %}
+		</div>
+		{% if content.image %}
+        <div {{ region_attributes.image.addClass('content-img text-lg-right') }}>
+			{{ content.image }}
+		</div>
+        {% endif %}
+        
+	</li>
+{% endif %}

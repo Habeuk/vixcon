@@ -1,0 +1,69 @@
+{% if content %}
+	<section {{ attributes.addClass('vixion-schedule')}}>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<nav class="nav nav-pills nav-fill bg-light" id="TopicTab" role="tablist">
+						<a class="nav-item nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
+							{% if content.day_one %}
+								<h4 {{ region_attributes.day_one.addClass('h2 tab-title') }}>{{ content.day_one }}</h4>
+							{% endif %}
+							{% if content.day_one_duration %}
+								<p>{{ content.day_one_duration }}</p>
+							{% endif %}
+						</a>
+
+						<a class="nav-item nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">
+							{% if content.day_two %}
+								<h4 {{ region_attributes.day_two.addClass('h2 tab-title') }}>{{ content.day_two }}</h4>
+							{% endif %}
+							{% if content.day_two_duration %}
+								<p>{{ content.day_two_duration }}</p>
+							{% endif %}
+						</a>
+
+						<a class="nav-item nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">
+							{% if content.day_three %}
+								<h4 {{ region_attributes.day_three.addClass('h2 tab-title') }}>{{ content.day_three }}</h4>
+							{% endif %}
+							{% if content.day_three_duration %}
+								<p>{{ content.day_three_duration }}</p>
+							{% endif %}
+						</a>
+					</nav>
+
+					<div class="tab-content" id="myTabContent">
+						{% if content.day_one_container %}
+							<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+								<ul class="time-table list-unstyled">
+									{% for item in content.day_one_container|array_elements() %}
+										{{ item }}
+									{% endfor %}
+								</ul>
+							</div>
+						{% endif %}
+						{% if content.day_two_container %}
+							<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+								<ul class="time-table list-unstyled">
+									{% for item in content.day_two_container|array_elements() %}
+										{{ item }}
+									{% endfor %}
+								</ul>
+							</div>
+						{% endif %}
+						{% if content.day_three_container %}
+							<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+								<ul class="time-table list-unstyled">
+									{% for item in content.day_three_container|array_elements() %}
+										{{ item }}
+									{% endfor %}
+								</ul>
+							</div>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+{% endif %}

@@ -8,7 +8,7 @@
 							{{ content.second_image }}
 						{% endif %}
 						{% if content.first_image %}
-							<div class="" {{ region_attributes.first_image.addClass('img-block')}}>
+							<div {{ region_attributes.first_image.addClass('img-block')}}>
 								{{ content.first_image }}
 							</div>
 						{% endif %}
@@ -26,9 +26,9 @@
 								</h2>
 							{% endif %}
 							{% if content.description %}
-								<p {{ region_attributes.description.addClass('title-description') }}>
+								<div {{ region_attributes.description.addClass('title-description') }}>
 									{{ content.description }}
-								</p>
+								</div>
 							{% endif %}
 							{% if content.call_to_action %}
 								<div {{ region_attributes.call_to_action.addClass('question-block') }}>
