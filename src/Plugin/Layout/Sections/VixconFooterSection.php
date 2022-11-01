@@ -14,7 +14,7 @@ use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
  *   label = @Translation(" Vixcon : Footer "),
  *   category = @Translation("vixcon"),
  *   path = "layouts/sections",
- *   template = "footer",
+ *   template = "vixcon-footer",
  *   library = "vixcon/footer",
  *   default_region = "title",
  *   regions = {
