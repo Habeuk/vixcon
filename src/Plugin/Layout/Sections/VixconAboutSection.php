@@ -11,7 +11,7 @@ use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
  *
  * @Layout(
  *   id = "vixcon_about_section",
- *   label = @Translation(" Vixcon : Avout "),
+ *   label = @Translation(" Vixcon : About "),
  *   category = @Translation("vixcon"),
  *   path = "layouts/sections",
  *   template = "about",

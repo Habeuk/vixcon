@@ -1,0 +1,45 @@
+{% if content %}
+	{% if content.image.layout_builder_add_block %}
+		{{ content.image }}
+	{% endif %}
+	{% if content.image|layout_bg_img %}
+		{% set attributes = attributes.merge(content.image|layout_bg_img) %}
+	{% endif %}
+	<footer {{ attributes.addClass('vixcon-footer-section-handler')}}>
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-6 text-center">
+					{% if content.title %}
+						<h2 {{ region_attributes.title.addClass('h2 footer-title') }}>{{ content.title }}</h2>
+					{% endif %}
+					{% if content.description %}
+						<div {{ region_attributes.description.addClass('footer-description h6') }}>
+							{{ content.description }}
+						</div>
+					{% endif %}
+					{% if content.form %}
+						{{ content.form }}
+					{% endif %}
+
+					{% if content.shortText %}
+						<div {{ region_attributes.shortText.addClass('short-text h6') }}>{{ content.shortText }}</div>
+					{% endif %}
+					 
+                    {% if content.socials %}
+                        {{ content.socials }}
+                    {% endif %}
+				</div>
+			</div>
+			{% if content.copyright %}
+                <div class="row">
+				<div class="col-lg-12 text-center mt-5">
+					<p {{ region_attributes.copyright.addClass('copy h6') }}>
+						{{ content.copyright }}
+					</p>
+				</div>
+			</div>
+            {% endif %}
+            
+		</div>
+	</footer>
+{% endif %}
