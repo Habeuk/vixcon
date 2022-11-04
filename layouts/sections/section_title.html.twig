@@ -8,25 +8,25 @@
 	<div {{ attributes.addClass('vixon-section-title')}}>
 		<div class="container">
 			<div class="vixon-heading">
-				{% if content.intro %}
+				{% if content.intro|has_value %}
 					<span {{ region_attributes.intro.addClass('stroked-text')}}>{{ content.intro }}</span>
 				{% endif %}
 
 				<div class="title">
-					{% if content.title %}
+					{% if content.title|has_value %}
 						<h2 {{ region_attributes.title.addClass('head-title') }}>
 							{{ content.title }}
 						</h2>
 					{% endif %}
 
-					{% if content.description %}
+					{% if content.description|has_value %}
 						<p {{ region_attributes.description.addClass('title-description') }}>
 							{{ content.description }}
 						</p>
 					{% endif %}
 				</div>
 			</div>
-			{% if content.container %}
+			{% if content.container|has_value %}
 				<div class="row">
 					<div class="col-12">
 						{{ content.container }}
@@ -34,16 +34,16 @@
 				</div>
 			{% endif %}
 
-			{% if content.call_to_action_text or content.call_to_action %}
+			{% if content.call_to_action_text|has_value or content.call_to_action|has_value %}
 				<div class="row">
 					<div class="col-lg-12">
-						{% if content.call_to_action_text %}
+						{% if content.call_to_action_text|has_value %}
 							<h5 {{ region_attributes.call_to_action_text.addClass('question') }}>
 								{{ content.call_to_action_text }}
 							</h5>
 						{% endif %}
 
-						{% if content.call_to_action %}
+						{% if content.call_to_action|has_value %}
 							{{ content.call_to_action }}
 						{% endif %}
 					</div>
