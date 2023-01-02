@@ -10,7 +10,6 @@
 					{% if content.title %}
 						<h5 {{ region_attributes.title.addClass('contact-location') }}>{{ content.title }}</h5>
 					{% endif %}
-
 					{% if content.date %}
 						<h6 {{ region_attributes.date.addClass('contact-date') }}>
 							{{ content.date }}
@@ -20,8 +19,7 @@
                         <div {{ region_attributes.address.addClass('contact-lead') }}>
                         {{ content.address }}
 					</div>
-                    {% endif %}
-                    
+                    {% endif %}                    
 					{% if content.link %}
                         {{ content.link }}
                     {% endif %}

@@ -1,0 +1,107 @@
+{% if content %}
+<!-- Cette section possède 3 images qui se repète -->
+<div class="vixon-plane-slide">
+	<div class="content">
+		<div class="nuage-content">
+			{% if content.nuage %}
+			<div class="nuage nuage-inverse">				
+				{{ content.nuage }}
+			</div>
+			{% endif %}
+			<div class="nuage">
+				{{ content.nuage }}
+			</div>
+			<div class="nuage nuage-deux">
+				{{ content.nuage }}
+			</div>
+			<div class="nuage">
+				{{ content.nuage }}
+			</div>
+			<div class="nuage">
+				{{ content.nuage }}
+			</div>
+			<div class="nuage nuage-deux">
+				{{ content.nuage }}
+			</div>
+			<div class="nuage">
+				{{ content.nuage3 }}				
+			</div>
+			<div class="nuage nuage-inverse">
+				{{ content.nuage }}
+			</div>
+			<div class="nuage">
+				{{ content.nuage }}
+			</div>
+		</div>
+		<div class="nuage-content-2">
+			<div class="nuage">
+				{{ content.nuage }}
+			</div>
+			<div class="nuage nuage-deux">
+				{{ content.nuage3 }}
+			</div>
+			<div class="nuage nuage-inverse">
+				{{ content.nuage }}
+			</div>
+			<div class="nuage">
+				{{ content.nuage }}
+			</div>
+			<div class="nuage">
+				{{ content.nuage3 }}
+			</div>
+			<div class="nuage nuage-inverse">
+				{{ content.nuage }}
+			</div>
+			<div class="nuage">
+				{{ content.nuage }}
+			</div>
+			<div class="nuage nuage-deux">
+				{{ content.nuage }}
+			</div>
+			<div class="nuage">
+				{{ content.nuage }}
+			</div>
+		</div>
+		<div class="nuage-content-3">
+			<div class="nuage">
+				{{ content.nuage }}
+			</div>
+			<div class="nuage nuage-deux">
+				{{ content.nuage }}
+			</div>
+			<div class="nuage nuage-inverse">
+				{{ content.nuage }}
+			</div>
+			<div class="nuage">
+				{{ content.nuage }}
+			</div>
+			<div class="nuage">
+				{{ content.nuage3 }}
+			</div>
+			<div class="nuage nuage-inverse">
+				{{ content.nuage }}
+			</div>
+			<div class="nuage">
+				{{ content.nuage }}
+			</div>
+			<div class="nuage nuage-deux">
+				{{ content.nuage }}
+			</div>
+			<div class="nuage">
+				{{ content.nuage }}
+			</div>
+		</div>
+	</div>
+	<div class="plane">
+		<div {{ region_attributes.image_en_mouvement.addClass('plane-img') }}>
+			{{ content.image_en_mouvement }}
+		</div>
+		<div class="banner-img">
+			<div class="bi-title"> {{ content.big_titre }} </div>
+			{{ content.image_card }}
+			<div class="bi-rond"></div>
+			<div class="bi-corde"></div>
+		</div>
+	</div>
+</div>
+{% endif %}
