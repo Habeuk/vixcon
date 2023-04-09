@@ -3,7 +3,9 @@
 		<div class="container">
 			<div class="img-full">
 				{% if content.image %}
-					{{ content.image }}
+					<div {{ region_attributes.image }}>
+						{{ content.image }}
+					</div>
 				{% endif %}
 
 				<div class="contact-info">
@@ -21,7 +23,9 @@
 					</div>
                     {% endif %}                    
 					{% if content.link %}
-                        {{ content.link }}
+						<div {{ region_attributes.link }}>
+                            {{ content.link }}
+                        </div>
                     {% endif %}
 				</div>
 			</div>

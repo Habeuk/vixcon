@@ -7,13 +7,14 @@
 						<div class="counter-stat">
 							<h2 class="cs-light h3">
 								{% if content.bold_title %}
-                                    <span {{ region_attributes.bold_title.addClass('cs-bold') }}>{{ content.bold_title }}</span>
+                                    <div {{ region_attributes.bold_title.addClass('cs-bold') }}>{{ content.bold_title }}</div>
                                 {% endif %}
                                 {% if content.title %}
-                                    {#<br> ne pas utiliser les balises br sous drupal#}
+                                    <div {{ region_attributes.title }}>
                                     {{ content.title }}
+                                    </div>
                                 {% endif %}
-								</h2>
+							</h2>
                             {% if content.description %}
 							<div {{ region_attributes.description.addClass('cs-desc') }}>
 								{{ content.description }}
@@ -22,29 +23,29 @@
 						</div>
 					</div>
 					<div class="col-lg-6">
-					<div class="small-timer">
-						<div class="syotimer__body">
-							<div class="row">
-								<div class="col-md-3 counter-item">
-									<span id="nicamexCounterDays" class="bg-primary counter-circle"></span>
-									<span class="text">Jours</span>
-								</div>
-								<div class="col-md-3 counter-item">
-									<span id="nicamexCounterHours" class="bg-primary counter-circle"></span>
-									<span class="text">Heures</span>
-								</div>
-								<div class="col-md-3 counter-item">
-									<span id="nicamexCounterMinutes" class="bg-primary counter-circle">25</span>
-									<span class="text">Minutes</span>
-								</div>
-								<div class="col-md-3 counter-item">
-									<span id="nicamexCounterSeconds" class="bg-primary counter-circle">25</span>
-									<span class="text">Secondes</span>
-								</div>
-							</div>
-						</div>
+    					<div class="small-timer">
+    						<div class="syotimer__body">
+    							<div class="row">
+    								<div class="col-md-3 counter-item">
+    									<span id="nicamexCounterDays" class="bg-theme counter-circle" data-aos="zoom-in" data-aos-duration="800" data-aos-easing="linear" data-aos-delay="400" ></span>
+    									<span class="text"> Jours </span>
+    								</div>
+    								<div class="col-md-3 counter-item">
+    									<span id="nicamexCounterHours" class="bg-theme counter-circle" data-aos="zoom-in" data-aos-duration="800" data-aos-easing="linear" data-aos-delay="700" ></span>
+    									<span class="text"> Heures </span>
+    								</div>
+    								<div class="col-md-3 counter-item">
+    									<span id="nicamexCounterMinutes" class="bg-theme counter-circle" data-aos="zoom-in" data-aos-duration="800" data-aos-easing="linear" data-aos-delay="900" >25</span>
+    									<span class="text"> Minutes </span>
+    								</div>
+    								<div class="col-md-3 counter-item">
+    									<span id="nicamexCounterSeconds" class="bg-theme counter-circle" data-aos="zoom-in" data-aos-duration="800" data-aos-easing="linear" data-aos-delay="1200" >25</span>
+    									<span class="text"> Secondes </span>
+    								</div>
+    							</div>
+    						</div>
+    					</div>
 					</div>
-				</div>
 				</div>
 			</div>
 		</div>

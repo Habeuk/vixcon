@@ -5,7 +5,10 @@
 				<div class="col-md-5  mb-5 mb-md-0">
 					<div class="about-img">
 						{% if content.second_image %}
-							{{ content.second_image }}
+							<div {{ region_attributes.second_image.addClass('second_image') }}>
+								{{ content.second_image }}
+							</div>
+							
 						{% endif %}
 						{% if content.first_image %}
 							<div {{ region_attributes.first_image.addClass('img-block')}}>
@@ -17,7 +20,7 @@
 				<div class="col-md-7 mt-5 mt-md-0">
 					<div class="vixon-heading">
 						{% if content.intro %}
-							<span {{ region_attributes.intro.addClass('stroked-text')}}>{{ content.intro }}</span>
+							<div {{ region_attributes.intro.addClass('stroked-text')}}>{{ content.intro }}</div>
 						{% endif %}
 						<div class="title">
 							{% if content.title %}
