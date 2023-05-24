@@ -11,18 +11,16 @@
 				{% if content.intro|has_value %}
 					<span {{ region_attributes.intro.addClass(['stroked-text','intro'])}}>{{ content.intro }}</span>
 				{% endif %}
-
 				<div class="title">
 					{% if content.title|has_value %}
 						<h2 {{ region_attributes.title.addClass(['head-title','title']) }}>
 							{{ content.title }}
 						</h2>
 					{% endif %}
-
 					{% if content.description|has_value %}
-						<p {{ region_attributes.description.addClass(['title-description','description']) }}>
+						<div {{ region_attributes.description.addClass(['title-description','description']) }}>
 							{{ content.description }}
-						</p>
+						</div>
 					{% endif %}
 				</div>
 			</div>
