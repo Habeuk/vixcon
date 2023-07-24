@@ -1,6 +1,6 @@
 {% if content %}
 	<div {{ attributes.addClass('vixon-event-section')}}>
-		<div class="container">
+		<div {% if settings.config_section %} class="{{ settings.config_section.type_container }} {{ settings.config_section.container_class }}" {% else %} class="container" {% endif %}>
 			<div class="row justify-content-center">
 				<div class="col-md-5  mb-5 mb-md-0">
 					<div class="about-img">
@@ -29,12 +29,12 @@
 								</h2>
 							{% endif %}
 							{% if content.description %}
-								<div {{ region_attributes.description.addClass('title-description') }}>
+								<div {{ region_attributes.description.addClass('title-description','description') }}>
 									{{ content.description }}
 								</div>
 							{% endif %}
-							{% if content.call_to_action %}
-								<div {{ region_attributes.call_to_action.addClass('question-block') }}>
+							{% if content.call_to_action|has_value %}
+								<div {{ region_attributes.call_to_action.addClass('question-block', 'call_to_action') }}>
 									{{ content.call_to_action }}
 								</div>
 							{% endif %}
