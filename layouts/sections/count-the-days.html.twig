@@ -1,6 +1,6 @@
 {% if content %}
 	<div {{ attributes.addClass(['vixon-counter-section','moove-up'])}}>
-		<div class="container">
+		<div class="container">			
 			<div class="counter-inner">
 				<div class="row align-items-center">
 					<div class="col-lg-6">
@@ -19,7 +19,16 @@
 							<div {{ region_attributes.description.addClass('cs-desc') }}>
 								{{ content.description }}
 							</div>
-						{% endif %}
+						    {% endif %}
+						    {% if content.counter.layout_builder_add_block %}
+    						    <div {{ region_attributes.counter.addClass('counter') }}>
+    						    	{{ content.counter }}
+    						   	</div>
+						    {% else %}
+    						    <div {{ region_attributes.counter.addClass('counter-day') }}>
+    						    	{{ content.counter|layout_value }}
+    						   	</div>
+						    {% endif %}
 						</div>
 					</div>
 					<div class="col-lg-6">
@@ -27,21 +36,24 @@
     						<div class="syotimer__body">
     							<div class="row">
     								<div class="col-6 col-md-3 mb-5 mb-sm-0 counter-item">
-    									<span id="nicamexCounterDays" class="bg-theme counter-circle" data-aos="zoom-in" data-aos-duration="800" data-aos-easing="linear" data-aos-delay="400" ></span>
+    									<span  class="bg-theme counter-circle nicamexCounterDays" data-aos="zoom-in" data-aos-duration="800" data-aos-easing="linear" data-aos-delay="400" ></span>
     									<span class="text"> {{ 'Days'|trans }} </span>
     								</div>
     								<div class="col-6 col-md-3 mb-5 mb-sm-0 counter-item">
-    									<span id="nicamexCounterHours" class="bg-theme counter-circle" data-aos="zoom-in" data-aos-duration="800" data-aos-easing="linear" data-aos-delay="700" ></span>
+    									<span class="bg-theme counter-circle nicamexCounterHours" data-aos="zoom-in" data-aos-duration="800" data-aos-easing="linear" data-aos-delay="700" ></span>
     									<span class="text"> {{ 'Hours'|trans }} </span>
     								</div>
     								<div class="col-6 col-md-3 mb-5 mb-sm-0 counter-item">
-    									<span id="nicamexCounterMinutes" class="bg-theme counter-circle" data-aos="zoom-in" data-aos-duration="800" data-aos-easing="linear" data-aos-delay="900" >25</span>
+    									<span class="bg-theme counter-circle nicamexCounterMinutes" data-aos="zoom-in" data-aos-duration="800" data-aos-easing="linear" data-aos-delay="900" >25</span>
     									<span class="text"> {{ 'Minutes'|trans }} </span>
     								</div>
     								<div class="col-6 col-md-3 mb-5 mb-sm-0 counter-item">
-    									<span id="nicamexCounterSeconds" class="bg-theme counter-circle" data-aos="zoom-in" data-aos-duration="800" data-aos-easing="linear" data-aos-delay="1200" >25</span>
+    									<span class="bg-theme counter-circle nicamexCounterSeconds" data-aos="zoom-in" data-aos-duration="800" data-aos-easing="linear" data-aos-delay="1200" >25</span>
     									<span class="text"> {{ 'seconds'|trans }} </span>
     								</div>
+    								{% if content.text_event_finish %}
+    									<div {{ region_attributes.counter.addClass(['nicamexCounter', 'd-none']) }}>{{ content.text_event_finish }}</div>
+    								{% endif %}
     							</div>
     						</div>
     					</div>

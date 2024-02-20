@@ -28,84 +28,88 @@ use Drupal\formatage_models\Plugin\Layout\Sections\FormatageModelsSection;
  *       "label" = @Translation("description"),
  *     },
  *     "counter" = {
- *       "label" = @Translation("counter"),
+ *       "label" = @Translation("Day of event"),
+ *     },
+ *     "text_event_finish" = {
+ *       "label" = @Translation("text_event_finish"),
  *     },
  *   }
  * )
  */
-
 class VixconCountTheDaysSection extends FormatageModelsSection {
 
-    /**
-     *
-     * {@inheritdoc}
-     * @see \Drupal\formatage_models\Plugin\Layout\FormatageModels::__construct()
-     */
-    public function __construct(array $configuration, $plugin_id, $plugin_definition, StylesGroupManager $styles_group_manager) {
-        // TODO Auto-generated method stub
-        parent::__construct($configuration, $plugin_id, $plugin_definition, $styles_group_manager);
-        $this->pluginDefinition->set('icon', $this->pathResolver->getPath('module', 'vixcon') . "/icones/sections/count-the-days.png");
-    }
+  /**
+   *
+   * {@inheritdoc}
+   * @see \Drupal\formatage_models\Plugin\Layout\FormatageModels::__construct()
+   */
+  public function __construct(array $configuration, $plugin_id, $plugin_definition, StylesGroupManager $styles_group_manager) {
+    // TODO Auto-generated method stub
+    parent::__construct($configuration, $plugin_id, $plugin_definition, $styles_group_manager);
+    $this->pluginDefinition->set('icon', $this->pathResolver->getPath('module', 'vixcon') . "/icones/sections/count-the-days.png");
+  }
 
-    /**
-     *
-     * {@inheritdoc}
-     * @see \Drupal\formatage_models\Plugin\Layout\FormatageModels::build()
-     */
-    public function build(array $regions) {
-        // TODO Auto-generated method stub
-        $build = parent::build($regions);
-        FormatageModelsThemes::formatSettingValues($build);
-        return $build;
-    }
+  /**
+   *
+   * {@inheritdoc}
+   * @see \Drupal\formatage_models\Plugin\Layout\FormatageModels::build()
+   */
+  public function build(array $regions) {
+    // TODO Auto-generated method stub
+    $build = parent::build($regions);
+    FormatageModelsThemes::formatSettingValues($build);
+    return $build;
+  }
 
-    /**
-     * 
-     * {@inheritdoc}
-     * 
-     */
-    function defaultConfiguration() {
-        return [
-            'load_libray' => true,
-            'derivate' => [
-                'value' => '',
-                'options' => [
-                    'vixon-counter-section--simple' => 'simple',
-                ]
-            ],
-            'infos' => [
-                'builder-form' => true,
-                'info' => [
-                    'title' => 'Layout informations',
-                    'loader' => 'static'
-                ],
-                'fields' => [
-                    'bold_title' => [
-                        'text' => [
-                            'label' => 'Titre gras',
-                            'value' => 'Count the day'
-                        ]
-                    ],
-                    'title' => [
-                        'text' => [
-                            'label' => 'Titre',
-                            'value' => 'until conference start'
-                        ]
-                    ],
-                    'description' => [
-                        'text' => [
-                            'label' => 'Description',
-                            'value' => 'Accusantium provident suspicit dicta magni dolor deserunt nam abcaecati non veraris optio'
-                        ]
-                    ],
-                    'counter' => [
-                        'text_html' => [
-                            'label' => 'Arrière Plan',
-                            'value' => 'The counter is down'
-                        ]
-                    ],
-                ]
+  /**
+   *
+   * {@inheritdoc}
+   *
+   */
+  function defaultConfiguration() {
+    return [
+      'load_libray' => true,
+      'region_css_text_event_finish' => "text-center mx-auto pt-3 h2",
+      'derivate' => [
+        'value' => '',
+        'options' => [
+          'vixon-counter-section--simple' => 'simple'
+        ]
+      ],
+      'infos' => [
+        'builder-form' => true,
+        'info' => [
+          'title' => 'Layout informations',
+          'loader' => 'static'
+        ],
+        'fields' => [
+          'bold_title' => [
+            'text' => [
+              'label' => 'Titre gras',
+              'value' => 'Count the day'
             ]
-        ] + parent::defaultConfiguration();
-    }
+          ],
+          'title' => [
+            'text' => [
+              'label' => 'Titre',
+              'value' => 'until conference start'
+            ]
+          ],
+          'description' => [
+            'text' => [
+              'label' => 'Description',
+              'value' => 'Accusantium provident suspicit dicta magni dolor deserunt nam abcaecati non veraris optio'
+            ]
+          ],
+          'counter' => [
+            'text_html' => [
+              'label' => 'Arrière Plan',
+              'value' => 'The counter is down'
+            ]
+          ]
+        ]
+      ]
+    ] + parent::defaultConfiguration();
+  }
+
 }
