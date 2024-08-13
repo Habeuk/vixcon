@@ -2,7 +2,7 @@
 	<div {{ attributes.addClass('vixon-event-section')}}>
 		<div {% if settings.config_section %} class="{{ settings.config_section.type_container }} {{ settings.config_section.container_class }}" {% else %} class="container" {% endif %}>
 			<div class="row justify-content-center">
-				<div class="col-md-5  mb-5 mb-md-0">
+				<div class="{{ settings.bloc_images }} images">
 					<div class="about-img">
 						{% if content.second_image %}
 							<div {{ region_attributes.second_image.addClass('second_image') }}>
@@ -11,20 +11,20 @@
 							
 						{% endif %}
 						{% if content.first_image %}
-							<div {{ region_attributes.first_image.addClass('img-block')}}>
+							<div {{ region_attributes.first_image.addClass(['img-block','first_image'])}}>
 								{{ content.first_image }}
 							</div>
 						{% endif %}
 					</div>
 				</div>
-				<div class="col-md-7 mt-5 mt-md-0">
+				<div class=" {{ settings.bloc_texte }} texte">
 					<div class="vixon-heading">
 						{% if content.intro %}
-							<div {{ region_attributes.intro.addClass('stroked-text')}}>{{ content.intro }}</div>
+							<div {{ region_attributes.intro.addClass(['stroked-text','intro'])}}>{{ content.intro }}</div>
 						{% endif %}
 						<div class="title">
 							{% if content.title %}
-								<h2 {{ region_attributes.title.addClass('head-title') }}>
+								<h2 {{ region_attributes.title.addClass(['head-title','title']) }}>
 									{{ content.title }}
 								</h2>
 							{% endif %}
